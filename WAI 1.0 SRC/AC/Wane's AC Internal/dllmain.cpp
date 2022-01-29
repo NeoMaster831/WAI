@@ -136,25 +136,8 @@ DWORD WINAPI thr_main(HMODULE hModule) {
             *playerZAddr += axis.z;
             lockUpdate(&lockXLoc, &lockYLoc, &lockZLoc, playerXAddr, playerYAddr, playerZAddr);
 
-        } if (GetAsyncKeyState(0x41) & 1 && fly) { // A
-            *playerXAddr -= axis.z;
-            *playerYAddr -= axis.y;
-            *playerZAddr -= axis.x;
-            lockUpdate(&lockXLoc, &lockYLoc, &lockZLoc, playerXAddr, playerYAddr, playerZAddr);
-
-        } if (GetAsyncKeyState(0x53) & 1 && fly) { // S
-            *playerXAddr -= axis.x;
-            *playerYAddr -= axis.y;
-            *playerZAddr -= axis.z;
-            lockUpdate(&lockXLoc, &lockYLoc, &lockZLoc, playerXAddr, playerYAddr, playerZAddr);
-
-        } if (GetAsyncKeyState(0x44) & 1 && fly) { // D
-            *playerXAddr += axis.z;
-            *playerYAddr += axis.y;
-            *playerZAddr += axis.x;
-            lockUpdate(&lockXLoc, &lockYLoc, &lockZLoc, playerXAddr, playerYAddr, playerZAddr);
-
-        } if (GetAsyncKeyState(VK_SPACE) & 1 && fly) { // if player presses space key,
+        }
+        if (GetAsyncKeyState(VK_SPACE) & 1 && fly) { // if player presses space key,
             *playerYAddr += FLY_SPEED;
             lockUpdate(&lockXLoc, &lockYLoc, &lockZLoc, playerXAddr, playerYAddr, playerZAddr);
         } if (GetAsyncKeyState(VK_SHIFT) & 1 && fly) { // if player presses shift key,
